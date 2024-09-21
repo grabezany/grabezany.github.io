@@ -1,0 +1,28 @@
+.Text {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.Upgrades {
+    font-family: sans-serif;
+    text-align: right;
+    margin-left: 75%;
+    border-radius: 4px;
+    margin-top: -300px
+}
+
+.Clicker {
+    font-family: sans-serif;
+    text-align: left;
+    background-color: lightgrey;
+    width: 300px;
+    height: 100px;
+    border-radius: 4px;
+}
+
+.Stocks {
+    font-family: sans-serif;
+    margin-top: -175px;
+    margin-left: 10px
+}
+
