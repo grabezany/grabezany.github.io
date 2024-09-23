@@ -22,6 +22,6 @@ ClickerUpg.addEventListener("click", function(){
         Data.Money -= Data.Clickers.Cost;
         Data.Clickers.Cost = Data.Clickers.Cost * rando(10, 50);
         Data.Clickers.Owned += 1;
-        ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned + "<br>$" + Data.Clickers.Cost;
+        ClickerDisplay.textContent = "Owned: " + Data.Clickers.Owned + "/n$" + Data.Clickers.Cost;
     }
 });
