@@ -10,6 +10,7 @@ var Money = document.getElementById("Money");
 var Cash = document.getElementById("MoneyStored");
 
 var ClickerUpg = document.getElementById("ClickerUpg");
+var ClickerDisplay = document.getElementById("ClickerDisplay");
 
 Money.addEventListener("click", function(){
     Data.Money += 1;
@@ -19,5 +20,8 @@ Money.addEventListener("click", function(){
 ClickerUpg.addEventListener("click", function(){
     if(Data.Money >= Data.Clickers.Cost){
         Data.Money -= Data.Clickers.Cost;
+        Data.Clickers.Cost = Data.Clickers.Cost * rando(10, 50);
+        Data.Clickers.Owned += 1;
+        ClickerDisplay.innerHTML = "<h3 style='margin-left: 4px' id='ClickerDisplay'>Owned: " + Data.Clickers.Owned + "<br>$" + Data.Clickers.Cost + "</h3>"
     }
 });
