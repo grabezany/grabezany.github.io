@@ -7,6 +7,7 @@ var Data = {
 
 var Money = document.getElementById("Money");
 var Cash = document.getElementById("MoneyStored");
+var MoneyPerSecond = document.getElementById("MoneyPerSecond");
 
 var ClickerUpg = document.getElementById("ClickerUpg");
 var ClickerDisplay = document.getElementById("ClickerDisplay");
@@ -25,6 +26,7 @@ ClickerUpg.addEventListener("click", function(){
         ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
         Cash.textContent = "$"+Data.Money.toFixed(1);
+        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1);
         Data.Mps += 0.1;
     }
 });
