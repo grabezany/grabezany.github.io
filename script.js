@@ -2,8 +2,7 @@ var Data = {
     Money: 0,
     Mps: 0,
     Clickers: {Cost: 10, Owned: 0},
-    Bankers: 0,
-    Banks: 0
+    Bankers: {Cost: 1000, Owned: 0},
 }
 
 var Money = document.getElementById("Money");
@@ -26,6 +25,12 @@ ClickerUpg.addEventListener("click", function(){
         ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
         Cash.textContent = "$"+Data.Money;
-        
+        Data.Mps += 0.1;
     }
 });
+
+
+setInterval(function(){
+    Data.Money += Data.Mps;
+    Cash.textContent = "$"+Data.Money;
+}, 1000);
