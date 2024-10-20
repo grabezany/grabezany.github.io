@@ -24,7 +24,7 @@ ClickerUpg.addEventListener("click", function(){
         Data.Clickers.Owned += 1;
         ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
-        Cash.textContent = "$"+Data.Money;
+        Cash.textContent = "$"+Data.Money.toFixed(1);
         Data.Mps += 0.1;
     }
 });
