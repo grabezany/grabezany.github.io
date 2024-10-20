@@ -27,7 +27,7 @@ ClickerUpg.addEventListener("click", function(){
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
         Cash.textContent = "$"+Data.Money.toFixed(1);
         Data.Mps += 0.1;
-        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1);
+        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1) + " Per Second";
     }
 });
 
