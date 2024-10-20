@@ -14,7 +14,7 @@ var ClickerCost = document.getElementById("ClickerCost");
 
 Money.addEventListener("click", function(){
     Data.Money += 1;
-    Cash.textContent = "$"+Data.Money;
+    Cash.textContent = "$"+Data.Money.toFixed(1);
 });
 
 ClickerUpg.addEventListener("click", function(){
