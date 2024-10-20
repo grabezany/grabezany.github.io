@@ -26,3 +26,9 @@
     margin-left: 10px
 }
 
+.DirtCo {
+    border-radius: 4px;
+    width: 300px;
+    background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);
+    box-shadow: inset
+}
