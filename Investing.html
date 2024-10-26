@@ -11,27 +11,39 @@
 <body bgcolor="white">
         <div class="Text">
             <h1>Insane Investing</h1>
-            <h2 id="MoneyStored">$0</h2>
+            <h2 id="MoneyStored">$0.0</h2>
             <h3 id="MoneyPerSecond">$0 Per Second</h3>
             <img draggable="false" src="https://cdn.discordapp.com/attachments/1297371729622073404/1297371947713171527/Money.png?ex=6715af48&is=67145dc8&hm=dd4c813517ab7d079587a60b2d5608d17e57244421ef3c0d23db9e8632f6bd56&" id="Money">
         </div>
+
+
         <div class="Upgrades">
             <h1 style="text-align: center;">Upgrades</h1>
-            <div class="Clicker" id="ClickerUpg">
+            <div class="Clicker">
                 <h2 style="margin-left: 4px">Clicker</h2>
                 <h3 style="margin-left: 4px" id="ClickerDisplay">Owned: 0 <br> <h3 style="margin-left: 4px" id="ClickerCost">$10</h3></h3>
-                
+                <button id="ClickerUpg" style="margin-left: 3px">BUY</button>
+            </div>
+            <div class="Clicker">
+                <h2 style="margin-left: 4px">Banker</h2>
+                <h3 style="margin-left: 4px" id="BankerDisplay">Owned: 0 <br> <h3 style="margin-left: 4px" id="BankerCost">$1000</h3></h3>
+                <button id="BankerUpg" style="margin-left: 3px">BUY</button>
             </div>
         </div>
-        <div class="Stocks">
+
+
+        <div class="Stocks" style="width: 400px;">
             <h1>Stocks</h1>
-            <div id="DirtCo">
-                <h2>Dirt Co.</h2>
-                <p id="DirtValue">Stock Value: $5000</p>
-                <p id="DirtOwned">Owned Stocks: 0</p>
-                <button id="DirtInvest">Invest 1 Stock <button id="DirtSell" style="margin-left: 2px">Sell 1 Stock</button></button>
+            <div id="DirtCo" class="DirtCo">
+                <h2 styl="margin-left: 3px">Dirt Co.</h2>
+                <p id="DirtValue" style="margin-left: 3px">Stock Value: $5000</p>
+                <p id="DirtOwned" style="margin-left: 3px">Owned Stocks: 0</p>
+                <button id="DirtInvest" style="margin-left: 3px">Invest 1 Stock <button id="DirtSell" style="margin-left: 2px">Sell 1 Stock</button></button>
             </div>
         </div>
+        <button style="margin-top: 22vw" id="Save">Save<button style="margin-left: 2px" id="Load">Load</button></button>
+
+        
         <script src="https://cdn.jsdelivr.net/gh/nastyox/Rando.js@master/code/plain-javascript/2.0.0/rando-min.js"></script>
         <script src="script.js"></script>
 </body>
