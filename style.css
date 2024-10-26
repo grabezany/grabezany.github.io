@@ -8,7 +8,9 @@
     text-align: right;
     margin-left: 75%;
     border-radius: 4px;
-    margin-top: -300px
+    margin-top: -300px;
+    width: 300px;
+    height: 400px
 }
 
 .Clicker {
@@ -16,19 +18,19 @@
     text-align: left;
     background-color: lightgrey;
     width: 300px;
-    height: 115px;
+    height: 150px;
     border-radius: 4px;
 }
 
 .Stocks {
     font-family: sans-serif;
-    margin-top: -175px;
+    margin-top: -419px;
     margin-left: 10px
 }
-
-.DirtCo {
+#DirtCo {
     border-radius: 4px;
     width: 300px;
     background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);
-    box-shadow: inset
+    box-shadow: inset;
+    background-color: lightgrey;
 }
