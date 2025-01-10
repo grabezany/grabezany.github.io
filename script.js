@@ -20,6 +20,10 @@ var BankerUpg = document.getElementById("BankerUpg");
 var BankerDisplay = document.getElementById("BankerDisplay");
 var BankerCost = document.getElementById("BankerCost");
 
+var BankUpg = document.getElementById("BankUpg");
+var BankDisplay = document.getElementById("BankDisplay");
+var BankCost = document.getElementById("BankCost");
+
 var Save = document.getElementById("Save");
 var Load = document.getElementById("Load");
 
