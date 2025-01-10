@@ -96,6 +96,20 @@ BankerUpg.addEventListener("click", function(){
     }
 });
 
+BankUpg.addEventListener("click", function(){
+    if(Data.Money >= Data.Bank.Cost){
+        Data.Money -= Data.Bank.Cost;
+        Data.Bank.Cost = Data.Bank.Cost * rando(30, 90);
+        Data.Bank.Owned += 1;
+        BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
+        BankCost.innerText = "$" + Data.Bank.Cost;
+        Cash.textContent = "$"+Data.Money.toFixed(1);
+        Data.Mps += 10;
+        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1) + " Per Second";
+    }
+});
+
+
 
 setInterval(function(){
     Data.Money += Data.Mps;
