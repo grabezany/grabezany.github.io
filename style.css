@@ -34,3 +34,10 @@
     box-shadow: inset;
     background-color: lightgrey;
 }
+#StoneCo {
+    border-radius: 4px;
+    width: 300px;
+    backround-image: linear-gradient(to right, rgb(128, 128, 128), lightgrey);
+    box-shadow: inset;
+    background color: lightgrey;
+}
