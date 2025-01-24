@@ -146,6 +146,7 @@ codesredeem.addEventListener("click", function(){
    if(codes.value == "I_Like_Dirt!" && CodeRedeemed = false){
        Data.Stocks.Dirt.Owned += 1;
        CodeRedeemed = true;
+       alert("Redeemed!");
    } else {
        alert("You already redeemed this code!");
    }
