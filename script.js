@@ -138,21 +138,6 @@ Load.addEventListener("click", function(){
 });
 
 
-//REDEEM CODE SYSTEM
-var codes = document.getElementById("codes");
-var codesredeem = document.getElementById("codesredeem");
-var CodeRedeemed = false;
-codesredeem.addEventListener("click", function(){
-   if(codes.value == "I_Like_Dirt!" && CodeRedeemed = false){
-       Data.Stocks.Dirt.Owned += 1;
-       CodeRedeemed = true;
-       alert("Redeemed!");
-   } else {
-       alert("You already redeemed this code!");
-   }
-});
-
-
 //ANTICHEAT (Broken)
 //Blocks inspect console
 document.onkeydown = (e) => {
