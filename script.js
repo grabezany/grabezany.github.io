@@ -111,7 +111,7 @@ BankUpg.addEventListener("click", function(){
 
 
 
-setInterval(function(){
+var x = setInterval(function(){
     Data.Money += Data.Mps;
     Cash.textContent = "$"+Data.Money.toFixed(1);
 }, 1000);
@@ -132,6 +132,7 @@ Save.addEventListener("click", function(){
 });
 
 Load.addEventListener("click", function(){
+    clearInterval(x);
     var Data1 = localStorage.getItem("SaveData");
     JSON.parse(Data1);
     Data = Data1;
