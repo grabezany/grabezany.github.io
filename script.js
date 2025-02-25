@@ -170,6 +170,7 @@ Load.addEventListener("click", function(){
     ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
     DirtOwned.textContent = "Owned Stocks: " + Data.Stocks.Dirt.Owned;
     StoneOwned.textContent = "Owned Stocks: " + Data.Stocks.Stone.Owned;
+    MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
 });
 
 
