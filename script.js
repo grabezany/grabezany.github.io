@@ -2,10 +2,12 @@ var Data = {
     Money: 100000,
     Mps: 0,
     Stocks: {
-        Dirt: {Owned: 0, Cost: 5000}
+        Dirt: {Owned: 0, Cost: 5000},
+        Stone: {Owned: 0, Cost: 20000}
     },
     Clickers: {Cost: 10, Owned: 0},
     Bankers: {Cost: 1000, Owned: 0},
+    Bank: {Cost: 30000, Owned: 0}
 }
 
 var Money = document.getElementById("Money");
@@ -28,10 +30,10 @@ var Save = document.getElementById("Save");
 var Load = document.getElementById("Load");
 
 //DIRT
-DirtInvest = document.getElementById("DirtInvest");
-DirtSell = document.getElementById("DirtSell");
-DirtValue = document.getElementById("DirtValue");
-DirtOwned = document.getElementById("DirtOwned");
+var DirtInvest = document.getElementById("DirtInvest");
+var DirtSell = document.getElementById("DirtSell");
+var DirtValue = document.getElementById("DirtValue");
+var DirtOwned = document.getElementById("DirtOwned");
 
 DirtInvest.addEventListener("click", function(){
     if(Data.Money >= Data.Stocks.Dirt.Cost){
@@ -47,6 +49,31 @@ DirtSell.addEventListener("click", function(){
     Data.Money += Data.Stocks.Dirt.Cost;
     Data.Stocks.Dirt.Owned -= 1;
     DirtOwned.textContent = "Owned Stocks: "+Data.Stocks.Dirt.Owned;
+    Cash.textContent = "$"+Data.Money;
+    }
+});
+
+//STONE
+
+var StoneInvest = document.getElementById("StoneInvest");
+var StoneSell = document.getElementById("StoneSell");
+var StoneValue = document.getElementById("StoneValue");
+var StoneOwned = document.getElementById("StoneOwned");
+
+StoneInvest.addEventListener("click", function(){
+    if(Data.Money >= Data.Stocks.Stone.Cost){
+        Data.Money -= Data.Stocks.Stone.Cost;
+        Data.Stocks.Stone.Owned += 1;
+        StoneOwned.textContent = "Owned Stocks: "+Data.Stocks.Stone.Owned;
+        Cash.textConent = "$"+Data.Money;
+    }
+});
+
+StoneSell.addEventListener("click", function(){
+    if(Data.Stocks.Stone.Owned >= 1){
+    Data.Money += Data.Stocks.Stone.Cost;
+    Data.Stocks.Stone.Owned -= 1;
+    StoneOwned.textContent = "Owned Stocks: "+Data.Stocks.Stone.Owned;
     Cash.textContent = "$"+Data.Money;
     }
 });
@@ -67,7 +94,7 @@ DirtSell.addEventListener("click", function(){
 //GAME
 Money.addEventListener("click", function(){
     Data.Money += 1;
-    Cash.textContent = "$"+Data.Money.toFixed(1);
+    Cash.textContent = "$"+Data.Money;
 });
 
 ClickerUpg.addEventListener("click", function(){
@@ -77,9 +104,9 @@ ClickerUpg.addEventListener("click", function(){
         Data.Clickers.Owned += 1;
         ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
-        Cash.textContent = "$"+Data.Money.toFixed(1);
-        Data.Mps += 0.1;
-        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1) + " Per Second";
+        Cash.textContent = "$"+Data.Money;
+        Data.Mps += 1;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
     }
 });
 
@@ -90,9 +117,9 @@ BankerUpg.addEventListener("click", function(){
         Data.Bankers.Owned += 1;
         BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
         BankerCost.innerText = "$" + Data.Bankers.Cost;
-        Cash.textContent = "$"+Data.Money.toFixed(1);
-        Data.Mps += 1;
-        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1) + " Per Second";
+        Cash.textContent = "$"+Data.Money
+        Data.Mps += 5;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
     }
 });
 
@@ -103,9 +130,9 @@ BankUpg.addEventListener("click", function(){
         Data.Bank.Owned += 1;
         BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
         BankCost.innerText = "$" + Data.Bank.Cost;
-        Cash.textContent = "$"+Data.Money.toFixed(1);
-        Data.Mps += 10;
-        MoneyPerSecond.textContent = "$"+Data.Mps.toFixed(1) + " Per Second";
+        Cash.textContent = "$"+Data.Money;
+        Data.Mps += 50;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
     }
 });
 
@@ -113,12 +140,15 @@ BankUpg.addEventListener("click", function(){
 
 var x = setInterval(function(){
     Data.Money += Data.Mps;
-    Cash.textContent = "$"+Data.Money.toFixed(1);
+    Cash.textContent = "$"+Data.Money
 }, 1000);
 
 setInterval(function(){
     Data.Stocks.Dirt.Cost = rando(1000, 50000);
     DirtValue.textContent = "Stock Value: $"+Data.Stocks.Dirt.Cost;
+
+    Data.Stocks.Stone.Cost = rando(5000, 500000);
+    StoneValue.textContent = "Stock Value: $"+Data.Stocks.Stone.Cost;
 }, 60000)
 
 
@@ -128,13 +158,13 @@ setInterval(function(){
 //SAVE DATA
 
 Save.addEventListener("click", function(){
-    localStorage.setItem("SaveData", JSON.stringify(Data));
+    localStorage.setItem("SaveData", Data);
 });
 
 Load.addEventListener("click", function(){
-    clearInterval(x);
     var Data1 = localStorage.getItem("SaveData");
-    JSON.parse(Data1);
+    Data1.replace('"', '');
+    console.log(Data1);
     Data = Data1;
 });
 
