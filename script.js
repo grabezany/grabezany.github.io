@@ -100,7 +100,7 @@ Money.addEventListener("click", function(){
 ClickerUpg.addEventListener("click", function(){
     if(Data.Money >= Data.Clickers.Cost){
         Data.Money -= Data.Clickers.Cost;
-        Data.Clickers.Cost = Data.Clickers.Cost * rando(10, 50);
+        Data.Clickers.Cost = Data.Clickers.Cost * rando(1, 10);
         Data.Clickers.Owned += 1;
         ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
         ClickerCost.innerText = "$" + Data.Clickers.Cost;
@@ -113,7 +113,7 @@ ClickerUpg.addEventListener("click", function(){
 BankerUpg.addEventListener("click", function(){
     if(Data.Money >= Data.Bankers.Cost){
         Data.Money -= Data.Bankers.Cost;
-        Data.Bankers.Cost = Data.Bankers.Cost * rando(30, 90);
+        Data.Bankers.Cost = Data.Bankers.Cost * rando(3, 9);
         Data.Bankers.Owned += 1;
         BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
         BankerCost.innerText = "$" + Data.Bankers.Cost;
@@ -126,7 +126,7 @@ BankerUpg.addEventListener("click", function(){
 BankUpg.addEventListener("click", function(){
     if(Data.Money >= Data.Bank.Cost){
         Data.Money -= Data.Bank.Cost;
-        Data.Bank.Cost = Data.Bank.Cost * rando(30, 90);
+        Data.Bank.Cost = Data.Bank.Cost * rando(2, 8);
         Data.Bank.Owned += 1;
         BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
         BankCost.innerText = "$" + Data.Bank.Cost;
