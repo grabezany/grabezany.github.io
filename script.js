@@ -158,14 +158,18 @@ setInterval(function(){
 //SAVE DATA
 
 Save.addEventListener("click", function(){
-    localStorage.setItem("SaveData", Data);
+    localStorage.setItem("SaveData", JSON.stringify(Data));
 });
 
 Load.addEventListener("click", function(){
-    var Data1 = localStorage.getItem("SaveData");
-    Data1.replace('"', '');
+    var Data1 = JSON.parse(localStorage.getItem("SaveData"));
     console.log(Data1);
     Data = Data1;
+    BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
+    BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
+    ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
+    DirtOwned.textContent = "Owned Stocks: " + Data.Stocks.Dirt.Owned;
+    StoneOwned.textContent = "Owned Stocks: " + Data.Stocks.Stone.Owned;
 });
 
 
