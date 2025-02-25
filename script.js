@@ -1,5 +1,5 @@
 var Data = {
-    Money: 10000000000000000000000000,
+    Money: 100000,
     Mps: 0,
     Stocks: {
         Dirt: {Owned: 0, Cost: 5000},
