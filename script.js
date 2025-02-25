@@ -1,5 +1,5 @@
 var Data = {
-    Money: 100000,
+    Money: 10000000000000000000000000,
     Mps: 0,
     Stocks: {
         Dirt: {Owned: 0, Cost: 5000},
@@ -7,7 +7,10 @@ var Data = {
     },
     Clickers: {Cost: 10, Owned: 0},
     Bankers: {Cost: 1000, Owned: 0},
-    Bank: {Cost: 30000, Owned: 0}
+    Bank: {Cost: 30000, Owned: 0},
+    Farm: {Cost: 500000, Owned: 0},
+    Printer: {Cost: 750000, Owned: 0},
+    Magnet: {Cost: 5000000, Owned: 0}
 }
 
 var Money = document.getElementById("Money");
@@ -25,6 +28,18 @@ var BankerCost = document.getElementById("BankerCost");
 var BankUpg = document.getElementById("BankUpg");
 var BankDisplay = document.getElementById("BankDisplay");
 var BankCost = document.getElementById("BankCost");
+
+var FarmUpg = document.getElementById("FarmUpg");
+var FarmDisplay = document.getElementById("FarmDisplay");
+var FarmCost = document.getElementById("FarmCost");
+
+var PrinterUpg = document.getElementById("PrinterUpg");
+var PrinterDisplay = document.getElementById("PrinterDisplay");
+var PrinterCost = document.getElementById("PrinterCost");
+
+var MagnetUpg = document.getElementById("MagnetUpg");
+var MagnetDisplay = document.getElementById("MagnetDisplay");
+var MagnetCost = document.getElementById("MagnetCost");
 
 var Save = document.getElementById("Save");
 var Load = document.getElementById("Load");
@@ -107,6 +122,8 @@ ClickerUpg.addEventListener("click", function(){
         Cash.textContent = "$"+Data.Money;
         Data.Mps += 1;
         MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.");
     }
 });
 
@@ -120,6 +137,8 @@ BankerUpg.addEventListener("click", function(){
         Cash.textContent = "$"+Data.Money
         Data.Mps += 5;
         MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.");
     }
 });
 
@@ -133,6 +152,53 @@ BankUpg.addEventListener("click", function(){
         Cash.textContent = "$"+Data.Money;
         Data.Mps += 50;
         MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.");
+    }
+});
+
+FarmUpg.addEventListener("click", function(){
+    if(Data.Money >= Data.Farm.Cost){
+        Data.Money -= Data.Farm.Cost;
+        Data.Farm.Cost = Data.Farm.Cost * rando(1, 5);
+        Data.Farm.Owned += 1;
+        FarmDisplay.innerText = "Owned: " + Data.Farm.Owned;
+        FarmCost.innerText = "$" + Data.Farm.Cost;
+        Cash.textContent = "$"+Data.Money;
+        Data.Mps += 250;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.")
+    }
+});
+
+PrinterUpg.addEventListener("click", function(){
+    if(Data.Money >= Data.Printer.Cost){
+        Data.Money -= Data.Printer.Cost;
+        Data.Printer.Cost = Data.Printer.Cost * rando(2, 5);
+        Data.Printer.Owned += 1;
+        PrinterDisplay.innerText = "Owned: " + Data.Printer.Owned;
+        PrinterCost.innerText = "$" + Data.Printer.Cost;
+        Cash.textContent = "$"+Data.Money;
+        Data.Mps += 300;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.")
+    }
+});
+
+MagnetUpg.addEventListener("click", function(){
+    if(Data.Money >= Data.Magnet.Cost){
+        Data.Money -= Data.Magnet.Cost;
+        Data.Magnet.Cost = Data.Magnet.Cost * rando(2, 5);
+        Data.Magnet.Owned += 1;
+        MagnetDisplay.innerText = "Owned: " + Data.Magnet.Owned;
+        MagnetCost.innerText = "$" + Data.Magnet.Cost;
+        Cash.textContent = "$"+Data.Money;
+        Data.Mps += 500;
+        MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+    } else{
+        alert("You can't afford this.")
     }
 });
 
@@ -168,6 +234,9 @@ Load.addEventListener("click", function(){
     BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
     BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
     ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
+    FarmDisplay.innerText = "Owned: " + Data.Farm.Owned;
+    PrinterDisplay.innerText = "Owned: " + Data.Printer.Owned;
+    MagnetDisplay.innerText = "Owned: " + Data.Magnet.Owned;
     DirtOwned.textContent = "Owned Stocks: " + Data.Stocks.Dirt.Owned;
     StoneOwned.textContent = "Owned Stocks: " + Data.Stocks.Stone.Owned;
     MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
@@ -196,3 +265,64 @@ document.onkeydown = (e) => {
         e.preventDefault();
     }
 };
+
+
+
+//Animations
+
+var DirtCo = document.getElementById("DirtCo");
+
+DirtCo.addEventListener("mouseover", function(){
+    DirtCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);";
+});
+
+DirtCo.addEventListener("mouseout", function(){
+    DirtCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);";
+});
+
+StoneCo.addEventListener("mouseover", function(){
+    StoneCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, grey, lightgrey);";
+});
+
+StoneCo.addEventListener("mouseout", function(){
+    StoneCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, grey, lightgrey);";
+});
+
+
+//Info Thing
+
+var ClickerInfo = document.getElementById("ClickerInfo");
+var BankerInfo = document.getElementById("BankerInfo");
+var BankInfo = document.getElementById("BankInfo");
+var FarmInfo = document.getElementById("FarmInfo");
+var PrinterInfo = document.getElementById("PrinterInfo");
+var MagnetInfo = document.getElementById("MagnetInfo");
+
+
+ClickerInfo.addEventListener("click", function(){
+    alert("Clickers click the mouse button automatically for you granting you +1 MPS for ever clicker owned.");
+});
+
+BankerInfo.addEventListener("click", function(){
+    alert("Bankers speed up production by setting up tents or 'mini banks' allowing for easy access for customers granting +5 MPS for every banker owned.");
+});
+
+BankInfo.addEventListener("click", function(){
+    alert("Banks gain 10 fold the amount of customers that 'mini banks' get. Banks grant +50 MPS for every bank owned.");
+});
+
+FarmInfo.addEventListener("click", function(){
+    alert("Farms grow money naturally for you and take only 1 day to harvest! Each farm grants +250 MPS for every farm owned.");
+});
+
+PrinterInfo.addEventListener("click", function(){
+    alert("Printers automatically print money for you granting +300 MPS for every printer owned.");
+});
+
+MagnetInfo.addEventListener("click", function(){
+    alert("Magnets suck in nearby asteroids which are then sold for money granting +500 MPS for every magnet owned.");
+});
+
+
+
+
