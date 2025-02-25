@@ -10,34 +10,44 @@
     border-radius: 4px;
     margin-top: -300px;
     width: 300px;
-    height: 400px
+    height: 700px;
+    overflow: auto;
 }
 
-.Clicker {
+.Upgrade {
     font-family: sans-serif;
     text-align: left;
-    background-color: lightgrey;
-    width: 300px;
+    background-image: linear-gradient(to right, lightgrey, lightgreen);
+    width: auto;
     height: 150px;
     border-radius: 4px;
 }
 
 .Stocks {
     font-family: sans-serif;
-    margin-top: -419px;
-    margin-left: 10px
+    margin-top: -700px;
+    margin-left: 10px;
 }
+
 #DirtCo {
     border-radius: 4px;
     width: 300px;
     background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);
     box-shadow: inset;
     background-color: lightgrey;
+    margin-left: 3px;
 }
+
 #StoneCo {
     border-radius: 4px;
     width: 300px;
-    backround-image: linear-gradient(to right, rgb(128, 128, 128), lightgrey);
+    background-image: linear-gradient(to right, grey, lightgrey);
     box-shadow: inset;
-    background color: lightgrey;
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-bottom: 7px;
+}
+
+body {
+    background-color: lightgreen;
 }
