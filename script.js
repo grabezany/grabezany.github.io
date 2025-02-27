@@ -1,5 +1,5 @@
 var Data = {
-    Money: 100000,
+    Money: 10000000000000000000000000,
     Mps: 0,
     Stocks: {
         Dirt: {Owned: 0, Cost: 5000},
@@ -271,6 +271,8 @@ document.onkeydown = (e) => {
 //Animations
 
 var DirtCo = document.getElementById("DirtCo");
+var StoneCo = document.getElementById("StoneCo");
+var WoodCo = document.getElementById("WoodCo");
 
 DirtCo.addEventListener("mouseover", function(){
     DirtCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, rgb(154, 121, 121), lightgrey);";
@@ -286,6 +288,30 @@ StoneCo.addEventListener("mouseover", function(){
 
 StoneCo.addEventListener("mouseout", function(){
     StoneCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, grey, lightgrey);";
+});
+
+WoodCo.addEventListener("mouseover", function(){
+    WoodCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, rgb(118, 99, 76), lightgrey);";
+});
+
+WoodCo.addEventListener("mouseout", function(){
+    WoodCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, rgb(118, 99, 76), lightgrey);";
+});
+
+IronCo.addEventListener("mouseover", function(){
+    IronCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, white, lightgrey);";
+});
+
+IronCo.addEventListener("mouseout", function(){
+    IronCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, white, lightgrey);";
+});
+
+GoldCo.addEventListener("mouseover", function(){
+    GoldCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5); transition: box-shadow 0.3s; margin-left: 7px; transition: margin-left 0.5s; background-image: linear-gradient(to right, rgb(255, 234, 113), lightgrey);";
+});
+
+GoldCo.addEventListener("mouseout", function(){
+    GoldCo.style = "margin-left: 3px; margin-bottom: 7px; border-radius: 4px; background-color: WHITE; width: 300px; box-shadow: none; transition: box-shadow 0.3s; background-image: linear-gradient(to right, rgb(255, 234, 113), lightgrey);";
 });
 
 
