@@ -48,6 +48,36 @@
     margin-bottom: 7px;
 }
 
+#WoodCo {
+    border-radius: 4px;
+    width: 300px;
+    background-image: linear-gradient(to right, rgb(118, 99, 76), lightgrey);
+    box-shadow: inset;
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-bottom: 7px;
+}
+
+#IronCo {
+    border-radius: 4px;
+    width: 300px;
+    background-image: linear-gradient(to right, white, lightgrey);
+    box-shadow: inset;
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-bottom: 7px;
+}
+
+#GoldCo {
+    border-radius: 4px;
+    width: 300px;
+    background-image: linear-gradient(to right, rgb(255, 234, 113), lightgrey);
+    box-shadow: inset;
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-bottom: 7px;
+}
+
 body {
     background-color: lightgreen;
 }
