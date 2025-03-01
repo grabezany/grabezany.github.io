@@ -1,9 +1,12 @@
 var Data = {
-    Money: 10000000000000000000000000,
+    Money: 0,
     Mps: 0,
     Stocks: {
         Dirt: {Owned: 0, Cost: 5000},
-        Stone: {Owned: 0, Cost: 20000}
+        Stone: {Owned: 0, Cost: 20000},
+        Wood: {Owned: 0, Cost: 50000},
+        Iron: {Owned: 0, Cost: 75000},
+        Gold: {Owned: 0, Cost: 150000}
     },
     Clickers: {Cost: 10, Owned: 0},
     Bankers: {Cost: 1000, Owned: 0},
@@ -93,6 +96,80 @@ StoneSell.addEventListener("click", function(){
     }
 });
 
+//WOOD
+
+var WoodInvest = document.getElementById("WoodInvest");
+var WoodSell = document.getElementById("WoodSell");
+var WoodValue = document.getElementById("WoodValue");
+var WoodOwned = document.getElementById("WoodOwned");
+
+WoodInvest.addEventListener("click", function(){
+    if(Data.Money >= Data.Stocks.Wood.Cost){
+        Data.Money -= Data.Stocks.Wood.Cost;
+        Data.Stocks.Wood.Owned += 1;
+        WoodOwned.textContent = "Owned Stocks: "+Data.Stocks.Wood.Owned;
+        Cash.textConent = "$"+Data.Money;
+    }
+});
+
+WoodSell.addEventListener("click", function(){
+    if(Data.Stocks.Wood.Owned >= 1){
+    Data.Money += Data.Stocks.Wood.Cost;
+    Data.Stocks.Wood.Owned -= 1;
+    WoodOwned.textContent = "Owned Stocks: "+Data.Stocks.Wood.Owned;
+    Cash.textContent = "$"+Data.Money;
+    }
+});
+
+//Gold
+
+var GoldInvest = document.getElementById("GoldInvest");
+var GoldSell = document.getElementById("GoldSell");
+var GoldValue = document.getElementById("GoldValue");
+var GoldOwned = document.getElementById("GoldOwned");
+
+GoldInvest.addEventListener("click", function(){
+    if(Data.Money >= Data.Stocks.Gold.Cost){
+        Data.Money -= Data.Stocks.Gold.Cost;
+        Data.Stocks.Gold.Owned += 1;
+        GoldOwned.textContent = "Owned Stocks: "+Data.Stocks.Gold.Owned;
+        Cash.textConent = "$"+Data.Money;
+    }
+});
+
+GoldSell.addEventListener("click", function(){
+    if(Data.Stocks.Gold.Owned >= 1){
+    Data.Money += Data.Stocks.Gold.Cost;
+    Data.Stocks.Gold.Owned -= 1;
+    GoldOwned.textContent = "Owned Stocks: "+Data.Stocks.Gold.Owned;
+    Cash.textContent = "$"+Data.Money;
+    }
+});
+
+//IRON
+
+var IronInvest = document.getElementById("IronInvest");
+var IronSell = document.getElementById("IronSell");
+var IronValue = document.getElementById("IronValue");
+var IronOwned = document.getElementById("IronOwned");
+
+IronInvest.addEventListener("click", function(){
+    if(Data.Money >= Data.Stocks.Iron.Cost){
+        Data.Money -= Data.Stocks.Iron.Cost;
+        Data.Stocks.Iron.Owned += 1;
+        IronOwned.textContent = "Owned Stocks: "+Data.Stocks.Iron.Owned;
+        Cash.textConent = "$"+Data.Money;
+    }
+});
+
+IronSell.addEventListener("click", function(){
+    if(Data.Stocks.Iron.Owned >= 1){
+    Data.Money += Data.Stocks.Iron.Cost;
+    Data.Stocks.Iron.Owned -= 1;
+    IronOwned.textContent = "Owned Stocks: "+Data.Stocks.Iron.Owned;
+    Cash.textContent = "$"+Data.Money;
+    }
+});
 
 
 
@@ -215,6 +292,15 @@ setInterval(function(){
 
     Data.Stocks.Stone.Cost = rando(5000, 500000);
     StoneValue.textContent = "Stock Value: $"+Data.Stocks.Stone.Cost;
+
+    Data.Stocks.Wood.Cost = rando(15000, 1000000);
+    WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
+
+    Data.Stocks.Iron.Cost = rando(25000, 1500000);
+    WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
+
+    Data.Stocks.Gold.Cost = rando(50000, 1750000);
+    WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
 }, 60000)
 
 
