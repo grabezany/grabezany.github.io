@@ -1,4 +1,5 @@
 var Data = {
+    Version: "v2.2",
     Money: 0,
     Mps: 0,
     Stocks: {
@@ -15,6 +16,8 @@ var Data = {
     Printer: {Cost: 750000, Owned: 0},
     Magnet: {Cost: 5000000, Owned: 0}
 }
+
+var Version = document.getElementById("version");
 
 var Money = document.getElementById("Money");
 var Cash = document.getElementById("MoneyStored");
@@ -297,10 +300,10 @@ setInterval(function(){
     WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
 
     Data.Stocks.Iron.Cost = rando(25000, 1500000);
-    WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
+    StoneValue.textContent = "Stock Value: $"+Data.Stocks.Iron.Cost;
 
     Data.Stocks.Gold.Cost = rando(50000, 1750000);
-    WoodValue.textContent = "Stock Value: $"+Data.Stocks.Wood.Cost;
+    StoneValue.textContent = "Stock Value: $"+Data.Stocks.Gold.Cost;
 }, 60000)
 
 
@@ -317,15 +320,52 @@ Load.addEventListener("click", function(){
     var Data1 = JSON.parse(localStorage.getItem("SaveData"));
     console.log(Data1);
     Data = Data1;
-    BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
-    BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
-    ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
-    FarmDisplay.innerText = "Owned: " + Data.Farm.Owned;
-    PrinterDisplay.innerText = "Owned: " + Data.Printer.Owned;
-    MagnetDisplay.innerText = "Owned: " + Data.Magnet.Owned;
+    if(Data.Version == undefined || null){
+        Data.Version = "v2.2";
+        Version.textContent = Data.Version;
+    }
+    Version.textContent = Data.Version;
     DirtOwned.textContent = "Owned Stocks: " + Data.Stocks.Dirt.Owned;
+    DirtValue.textContent = "Stock Value: " + Data.Stocks.Dirt.Cost;
+    
     StoneOwned.textContent = "Owned Stocks: " + Data.Stocks.Stone.Owned;
+    StoneValue.textContent = "Stock Value: " + Data.Stocks.Stone.Cost;
+
+    WoodOwned.textContent = "Owned Stocks: " + Data.Stocks.Wood.Owned;
+    WoodValue.textContent = "Stock Value: " + Data.Stocks.Wood.Cost;
+
+    IronOwned.textContent = "Owned Stocks: " + Data.Stocks.Iron.Owned;
+    IronValue.textContent = "Stock Value: " + Data.Stocks.Iron.Cost;
+
+    GoldOwned.textContent = "Owned Stocks: " + Data.Stocks.Gold.Owned;
+    GoldValue.textContent = "Stock Value: " + Data.Stocks.Iron.Cost;
+
+    BankDisplay.innerText = "Owned: " + Data.Bank.Owned;
+    BankCost.textContent = "$"+Data.Bank.Cost;
+
+    BankerDisplay.innerText = "Owned: " + Data.Bankers.Owned;
+    BankerCost.innerText = "$"+Data.Bankers.Cost;
+
+    ClickerDisplay.innerText = "Owned: " + Data.Clickers.Owned;
+    ClickerCost.innerText = "$"+Data.Clickers.Cost;
+
+    PrinterDisplay.innerText = "Owned: " + Data.Printer.Owned;
+    PrinterCost.innerText = "$"+Data.Printer.Cost;
+    
+    MagnetDisplay.innerText = "Owned: " + Data.Magnet.Owned;
+    MagnetCost.innerText = "$"+Data.Magnet.Cost;
+
+    FarmDisplay.innerText = "Owned: " + Data.Farm.Owned;
+    FarmCost.innerText = "$"+Data.Farm.Cost;
+
     MoneyPerSecond.textContent = "$"+Data.Mps + " Per Second";
+   
+    
+    
+    
+     
+    
+    
 });
 
 
