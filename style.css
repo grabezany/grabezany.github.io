@@ -6,7 +6,6 @@
 }
 
 body.dark {
-  /* ChatGPT-ish dark gray */
   --bg: #2b2b2b;
   --fg: #e6e6e6;
   --border: #3f3f46;
