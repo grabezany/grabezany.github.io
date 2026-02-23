@@ -1,113 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Insane Investing</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grabezany Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-  <span>Insane Investing</span>
-</header>
-
-<div class="money">Cash: $<span id="money">0</span></div>
-<div class="timer">Next market tick in <span id="tickTimer">60</span>s</div>
-
-<div class="tabs">
-  <button class="tab-button active" onclick="openTab('click', this)">Click</button>
-  <button class="tab-button" onclick="openTab('stocks', this)">Stocks</button>
-  <button class="tab-button" onclick="openTab('upgrades', this)">Upgrades</button>
-  <button class="tab-button" onclick="openTab('settings', this)">Settings</button>
-  <button class="tab-button" onclick="openTab('changelog', this)">Changelog</button>
-</div>
-
-<div id="click" class="tab active">
-  <button id="clickButton" class="click-button">
-    Earn Seed Money
-    <div id="particles"></div>
-  </button>
-
-  <p id="perTick">You earn $0 per tick</p>
-  <p id="lore"></p>
-</div>
-
-<div id="stocks" class="tab">
-  <input id="search" placeholder="Search stocks" oninput="renderStocks()">
-  <div id="stocksList"></div>
-</div>
-
-<div id="upgrades" class="tab">
-  <div id="upgradeList"></div>
-</div>
-
-<div id="settings" class="tab">
-  <div class="card">
-
-    <div class="settings-section">
-      <div class="settings-title">Preferences</div>
-
-      <button class="action" onclick="toggleDarkMode()">
-        Toggle Dark / Light Mode
-      </button>
-    </div>
-
-    <div class="settings-section">
-      <div class="settings-title">Data Management</div>
-
-      <button class="action" onclick="saveGame(); showSaveNotification()">
-        Manual Save
-      </button>
-      <br><br>
-
-      <button class="action" onclick="exportSave()">Export Save</button>
-      <button class="action" onclick="triggerImport()">Import Save</button>
-      <input id="importFile" type="file" accept=".iisave,.json" style="display:none;">
-    </div>
-
-    <div class="settings-section">
-      <div class="settings-title danger-text">Danger Zone</div>
-
-      <button class="action danger" onclick="openEraseConfirm()">
-        Erase Save
-      </button>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- Confirm erase modal -->
-<div id="confirmOverlay" class="confirm hidden">
-  <div class="confirm-card">
-    <h3>Erase Save?</h3>
-    <p>This will permanently delete your save data on this device.</p>
-    <div class="confirm-actions">
-      <button class="action danger" onclick="confirmEraseSave()">Yes, erase</button>
-      <button class="action" onclick="closeEraseConfirm()">Cancel</button>
-    </div>
-  </div>
-</div>
-
-
-<div id="changelog" class="tab">
-  <div class="card">
-    <strong>v3.0</strong><br>
-    Full UI rework, stocks overhaul, offline income, tutorial.
-  </div>
-</div>
-
-<div id="saveNotification">Game Saved!</div>
-
-<div id="tutorialOverlay" class="tutorial hidden">
-  <div class="tutorial-card">
-    <h3 id="tutorialTitle"></h3>
-    <p id="tutorialText"></p>
-    <button class="action" onclick="nextTutorialStep()">Next</button>
-    <button class="action subtle" onclick="endTutorial()">Skip</button>
-  </div>
-</div>
-
-<script src="script.js"></script>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#market">Market</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Some introductory content.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>A showcase of my work.</p>
+        </section>
+        <section id="market">
+            <h2>Market</h2>
+            <div id="trading-interface">
+                <p>Trading interface will be here.</p>
+                <!-- You can include trading charts or features here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Grabezany</p>
+    </footer>
 </body>
 </html>
